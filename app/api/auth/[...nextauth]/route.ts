@@ -21,7 +21,7 @@ const handler = NextAuth({
 
         const user = await User.findOne({
           email: credentials.email,
-          password: credentials.password, // ⚠️ prod me bcrypt use karo
+          password: credentials.password, 
         });
 
         if (!user) {
@@ -45,7 +45,7 @@ const handler = NextAuth({
 
   callbacks: {
     async jwt({ token, user, trigger, session }) {
-      // First login
+   
       if (user) {
         token.id = user.id;
         token.name = user.name;
