@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 export async function connect() {
   try {
-    const MONGO_URL = "mongodb+srv://mdsamir13968:samir7866@cluster0.7brjblo.mongodb.net/loginData?retryWrites=true&w=majority";
+    const MONGO_URL =process.env.MONGO_URI;
    
     await mongoose.connect(MONGO_URL);
     console.log("connect successful..");
